@@ -1,0 +1,131 @@
+.head-wrap{
+  color:#fff;
+  background:#20232a;
+  height:50px;
+  line-height: 50px;
+}
+.head-middle{
+  width:90%;
+  margin:0 auto;
+  max-width: 1260px;
+  min-width: 780px;
+  overflow: hidden;
+}
+.head-logo{
+  color:#61dafb;
+  font-weight: 700;
+  font-size: 20px;
+  float:left;
+  line-height: 50px;
+  width:140px;
+}
+.head-logo img{
+  width:22px;
+  box-sizing: none;
+  display: inline-block;
+  vertical-align: top;
+  margin-top:15px;
+  cursor: pointer;
+}
+.head-logo span{
+  display: inline-block;
+  margin-left:10px;
+  line-height: 20px;
+  margin-top:-1px;
+  cursor: pointer;
+}
+.head-nav{
+  overflow: hidden;
+  float:left;
+  
+  font-size: 16px;
+}
+.head-nav li{
+  float:left;
+  padding:0 15px;
+  cursor:pointer;
+}
+.head-nav li a{
+  display:block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color:#ffffff;
+}
+.head-search{
+  float:right;
+  height:26px;
+  margin-top:12px;
+  
+  cursor:pointer;
+  border-radius: 4px;
+}
+.head-search span{
+  display:block;
+  width:26px;
+  height:26px;
+  float:left;
+  background:url('../../static/img/search.png') no-repeat center;
+  background-size: 26px 26px;
+}
+.head-input{
+  width:0;
+  display: block;
+  float:left;
+  height:26px;
+  border:none;
+  background:none;
+  user-select: none;
+  outline: none;
+  color:#fff;
+  font-size: 16px;
+  line-height: 26px;
+  margin-left:5px;
+}
+.head-input::-webkit-input-placeholder{
+  color:rgb(145, 132, 132);
+}
+.head-nav-right{
+  float:right;
+}
+.head-nav-right li{
+  float:left;
+  font-size: 14px;
+  padding:0 10px;
+  cursor:pointer;
+  user-select: none;
+}
+.head-input-focus{
+  width:100px;
+  transition: all 0.2s linear;
+}
+.head-input-bg{
+  background:#696770;
+}
+.clear-input-btn{
+  width:26px;
+  height:26px;
+  float:right;
+  background:url('../../static/img/head-close-input.png') no-repeat center;
+  background-size: 20px;
+}
+.head-right-nav-color{
+  color:#61dafb;
+}
+.head-left-nav-style{
+  color:#61dafb;
+  position: relative;
+  user-select: none;
+}
+.head-left-nav-style span{
+  display: block;
+  position: absolute;
+  width: 100%;
+  height:4px;
+  background:#61dafb;
+  bottom:0;
+  left:0;
+}
+.left-nav-down-style{
+  background:#7c7e83;
+}
