@@ -150,7 +150,7 @@ class Nav extends Component {
       leftNavIndex:5,
       leftNavMouseDownStyle:5
     })
-    this.props.history.push('/')
+    this.props.history.push('#/')
   }
   leftNavMouseDown(e){
     this.setState({
