@@ -3,7 +3,6 @@ import Nav from './components/nav/nav'
 import {withRouter} from "react-router-dom"; 
 import Router from './router/router.js'
 
-
 class App extends Component{
   constructor(props){
     super(props);

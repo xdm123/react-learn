@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import {withRouter} from "react-router-dom"; 
+import store from '../../store/index.js'
+import {CHANGE_LEFT_NAV_INDEX} from '../../store/actionTypes.js'
 import './nav.css'
 
 class Nav extends Component {
@@ -9,7 +11,7 @@ class Nav extends Component {
       focused:false,
       inputValue:'',
       rightNavIndex:3,
-      leftNavIndex:5,
+      leftNavIndex:store.getState(),
       leftNavMouseDownStyle:5,
       navleft:['文档','教程','博客','社区'],
       path:['#/doc','#/tutorial','#/blog','#/support']
@@ -23,6 +25,8 @@ class Nav extends Component {
     this.leftNavClick = this.leftNavClick.bind(this);
     this.returnHomePage = this.returnHomePage.bind(this);
     this.leftNavMouseDown = this.leftNavMouseDown.bind(this);
+    this.handleStoreChange = this.handleStoreChange.bind(this);
+    store.subscribe(this.handleStoreChange)
   }
   render(){
     return (
@@ -42,11 +46,11 @@ class Nav extends Component {
                   data-path={this.state.path[index]}
                   onClick={this.leftNavClick}
                   onMouseDown={this.leftNavMouseDown}
-                  className={this.state.leftNavIndex == index ? 'head-left-nav-style' : '' + this.state.leftNavMouseDownStyle == index ? 'left-nav-down-style' : ''}
+                  className={this.state.leftNavIndex.leftIndex == index ? 'head-left-nav-style' : '' + this.state.leftNavMouseDownStyle == index ? 'left-nav-down-style' : ''}
                   >
                     {item}
                     {
-                      this.state.leftNavIndex == index && (
+                      this.state.leftNavIndex.leftIndex == index && (
                         <span></span>
                       )
                     }
@@ -130,10 +134,15 @@ class Nav extends Component {
     })
   }
   leftNavClick(e){
-    this.setState({
-      leftNavIndex:e.target.dataset.index
-    });
-    console.log(this.props)
+    const action = {
+      type:CHANGE_LEFT_NAV_INDEX,
+      value:e.target.dataset.index
+    }
+    store.dispatch(action)
+    // this.setState({
+    //   leftNavIndex:e.target.dataset.index
+    // });
+    // console.log(this.props)
     this.props.history.push(e.target.dataset.path)
   }
   returnHomePage(){
@@ -147,6 +156,14 @@ class Nav extends Component {
     this.setState({
       leftNavMouseDownStyle:e.target.dataset.index
     })
+  }
+  handleStoreChange(){
+    this.setState({
+      leftNavIndex:store.getState()
+    })
+  }
+  componentDidMount(){
+    
   }
 }
 

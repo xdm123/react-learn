@@ -1,0 +1,1 @@
+export const CHANGE_LEFT_NAV_INDEX = 'change_left_nav_index'
